@@ -43,12 +43,17 @@ begin
   ComboBox3.Items.Clear;
 
   case ComboBox1.ItemIndex of
+{
+  0: begin // Consumo de combustible
+    ComboBox2.Items.AddStrings(['']);
+    ComboBox3.Items.AddStrings(ComboBox2.Items);
+}
   0: begin // Energía
     ComboBox2.Items.AddStrings(['Julio','Kilojulio','Caloría-gramo','Kilocaloría','Vatio-hora','Kilovatio-hora','Electrón-voltio','Unidad térmica británica','Termia estadounidense','Pie-libra fuerza']);
     ComboBox3.Items.AddStrings(ComboBox2.Items);
     end;
 
-  1: begin
+  1: begin // Frecuencia
     ComboBox2.Items.AddStrings(['Hercio (Hz)','Kilohercio (kHz)','Megahercio (MHz)','Gigahercio (GHz)']);
     ComboBox3.Items.AddStrings(ComboBox2.Items);
     end;
@@ -99,6 +104,15 @@ begin
 
   case ComboBox1.ItemIndex of
 
+  // Consumo de combustible
+{ 0: begin
+    if unidadDe = '' then valor := valor
+    else if unidadDe = '' then valor := valor;
+
+    if unidadA = '' then resultado := valor
+    else if unidadA = '' then resultado := valor;
+  end;
+}
   // Energía
   0: begin
     // pasar todo a Julios
@@ -187,11 +201,13 @@ begin
 
   // Tiempo
   5: begin
-    if unidadDe = 'Horas' then valor := valor * 3600
+    if unidadDe = 'Segundos' then valor := valor
+    else if unidadDe = 'Horas' then valor := valor * 3600
     else if unidadDe = 'Minutos' then valor := valor * 60;
 
-    if unidadA = 'Horas' then resultado := valor / 3600
-    else if unidadA = 'Minitos' then resultado := valor / 60
+    if unidadA = 'Segundos' then resultado := valor
+    else if unidadA = 'Horas' then resultado := valor / 3600
+    else if unidadA = 'Minutos' then resultado := valor / 60
     else resultado := valor;
   end;
 
