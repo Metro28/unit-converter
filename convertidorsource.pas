@@ -196,51 +196,51 @@ begin
 
   // Tamaño de datos
   4: begin
-    if unidadDe = 'Bit' then valor := valor * 8
-    else if unidadDe = 'Kilobit' then valor := valor * 125
-    else if unidadDe = 'Kibibit' then valor := valor * 128
-    else if unidadDe = 'Megabit' then valor := valor * 125000
-    else if unidadDe = 'Mebibit' then valor := valor * 131100
-    else if unidadDe = 'Gigabit' then valor := valor * 1.25E+8
-    else if unidadDe = 'Gibibit' then valor := valor * 1.342E+8
-    else if unidadDe = 'Terabit' then valor := valor * 1.25E+11
-    else if unidadDe = 'Tebibit' then valor := valor * 1.374E+11
-    else if unidadDe = 'Petabit' then valor := valor * 1.25E+14
-    else if unidadDe = 'Pebibit' then valor := valor * 1.407E+14
-    else if unidadDe = 'Byte' then valor := valor
-    else if unidadDe = 'Kilobyte' then valor := valor * 1000
-    else if unidadDe = 'Kibibyte' then valor := valor * 1024
-    else if unidadDe = 'Megabyte' then valor := valor * 1000000
-    else if unidadDe = 'Mebibyte' then valor := valor * 1.049E+6
-    else if unidadDe = 'Gigabyte' then valor := valor * 1000000000
-    else if unidadDe = 'Gibibyte' then valor := valor * 1.074E+9
-    else if unidadDe = 'Tirabyte' then valor := valor * 1000000000000
-    else if unidadDe = 'Tibibyte' then valor := valor * 1.1E+12
-    else if unidadDe = 'Petabyte' then valor := valor * 1000000000000000
-    else if unidadDe = 'Pebibyte' then valor := valor * 1.126E+15;
+    if unidadDe = 'Bit' then valor := valor
+    else if unidadDe = 'Kilobit' then valor := valor * 1000
+    else if unidadDe = 'Kibibit' then valor := valor * 1024
+    else if unidadDe = 'Megabit' then valor := valor * 1000000
+    else if unidadDe = 'Mebibit' then valor := valor * 1048576
+    else if unidadDe = 'Gigabit' then valor := valor * 1000000000
+    else if unidadDe = 'Gibibit' then valor := valor * 1073741824
+    else if unidadDe = 'Terabit' then valor := valor * 1000000000000
+    else if unidadDe = 'Tebibit' then valor := valor * 1099511627776
+    else if unidadDe = 'Petabit' then valor := valor * 1000000000000000
+    else if unidadDe = 'Pebibit' then valor := valor * 1125899906842624
+    else if unidadDe = 'Byte' then valor := valor * 8
+    else if unidadDe = 'Kilobyte' then valor := valor * 8000
+    else if unidadDe = 'Kibibyte' then valor := valor * 8192
+    else if unidadDe = 'Megabyte' then valor := valor * 8000000
+    else if unidadDe = 'Mebibyte' then valor := valor * 8388608
+    else if unidadDe = 'Gigabyte' then valor := valor * 8000000000
+    else if unidadDe = 'Gibibyte' then valor := valor * 8589934592
+    else if unidadDe = 'Tirabyte' then valor := valor * 8000000000000
+    else if unidadDe = 'Tibibyte' then valor := valor * 8796093022208
+    else if unidadDe = 'Petabyte' then valor := valor * 8000000000000000
+    else if unidadDe = 'Pebibyte' then valor := valor * 9007199254740992;
 
-    if unidadA = 'Bit' then resultado := valor / 8
-    else if unidadA = 'Kilobit' then resultado := valor / 125
-    else if unidadA = 'Kibibit' then resultado := valor / 128
-    else if unidadA = 'Megabit' then resultado := valor / 125000
-    else if unidadA = 'Mebibit' then resultado := valor / 131100
-    else if unidadA = 'Gigabit' then resultado := valor / 1.25E+8
-    else if unidadA = 'Gibibit' then resultado := valor / 1.342E+8
-    else if unidadA = 'Terabit' then resultado := valor / 1.25E+11
-    else if unidadA = 'Tebibit' then resultado := valor / 1.374E+11
-    else if unidadA = 'Petabit' then resultado := valor / 1.25E+14
-    else if unidadA = 'Pebibit' then resultado := valor / 1.407E+14
-    else if unidadA = 'Byte' then resultado := valor
-    else if unidadA = 'Kilobyte' then resultado := valor / 1000
-    else if unidadA = 'Kibibyte' then resultado := valor / 1024
-    else if unidadA = 'Megabyte' then resultado := valor / 1000000
-    else if unidadA = 'Mebibyte' then resultado := valor / 1.049E+6
-    else if unidadA = 'Gigabyte' then resultado := valor / 1000000000
-    else if unidadA = 'Gibibyte' then resultado := valor / 1.074E+9
-    else if unidadA = 'Tirabyte' then resultado := valor / 1000000000000
-    else if unidadA = 'Tibibyte' then resultado := valor / 1.1E+12
-    else if unidadA = 'Petabyte' then resultado := valor / 1000000000000000
-    else if unidadA = 'Pebibyte' then resultado := valor / 1.126E+15
+    if unidadA = 'Bit' then resultado := valor
+    else if unidadA = 'Kilobit' then resultado := valor / 1000
+    else if unidadA = 'Kibibit' then resultado := valor / 1024
+    else if unidadA = 'Megabit' then resultado := valor / 1000000
+    else if unidadA = 'Mebibit' then resultado := valor / 1048576
+    else if unidadA = 'Gigabit' then resultado := valor / 1000000000
+    else if unidadA = 'Gibibit' then resultado := valor / 1073741824
+    else if unidadA = 'Terabit' then resultado := valor / 1000000000000
+    else if unidadA = 'Tebibit' then resultado := valor / 1099511627776
+    else if unidadA = 'Petabit' then resultado := valor / 1000000000000000
+    else if unidadA = 'Pebibit' then resultado := valor / 1125899906842624
+    else if unidadA = 'Byte' then resultado := valor / 8
+    else if unidadA = 'Kilobyte' then resultado := valor / 8000
+    else if unidadA = 'Kibibyte' then resultado := valor / 8192
+    else if unidadA = 'Megabyte' then resultado := valor / 8000000
+    else if unidadA = 'Mebibyte' then resultado := valor / 8388608
+    else if unidadA = 'Gigabyte' then resultado := valor / 8000000000
+    else if unidadA = 'Gibibyte' then resultado := valor / 8589934592
+    else if unidadA = 'Tirabyte' then resultado := valor / 8000000000000
+    else if unidadA = 'Tibibyte' then resultado := valor / 8796093022208
+    else if unidadA = 'Petabyte' then resultado := valor / 8000000000000000
+    else if unidadA = 'Pebibyte' then resultado := valor / 9007199254740992
     else resultado := valor;
 
     end;
