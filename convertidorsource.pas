@@ -68,22 +68,27 @@ begin
     ComboBox3.Items.AddStrings(ComboBox2.Items);
     end;
 
-  4: begin // Temperatura
+  4: begin // Tamaño de datos
+    ComboBox2.Items.AddStrings(['Bit','Kilobit','Kibibit','Megabit','Mebibit','Gigabit','Gibibit','Terabit','Tebibit','Petabit','Pebibit','Byte','Kilobyte','Kibibyte','Megabyte','Mebibyte','Gigabyte','Gibibyte','Terabyte','Tebibyte']);
+    ComboBox3.Items.AddStrings(ComboBox2.Items);
+    end;
+
+  5: begin // Temperatura
     ComboBox2.Items.AddStrings(['Celcius','Fahrenheit','Kelvin']);
     ComboBox3.Items.AddStrings(ComboBox2.Items);
     end;
 
-  5: begin // Tiempo
+  6: begin // Tiempo
     ComboBox2.Items.AddStrings(['Horas','Minutos','Segundos']);
     ComboBox3.Items.AddStrings(ComboBox2.Items);
     end;
 
-  6: begin // Velocidad
+  7: begin // Velocidad
     ComboBox2.Items.AddStrings(['Kilómetros por hora', 'Metros por segundo', 'Millas por hora', 'Pies por segundo', 'Nudos']);
     ComboBox3.Items.AddStrings(ComboBox2.Items);
     end;
 
-  7: begin // Capacitancia
+  8: begin // Capacitancia
     ComboBox2.Items.AddStrings(['Faradio','Milifaradio','Microfaradio','Nanofaradio','Picofaradio','Femtofaradio']);
     ComboBox3.Items.AddStrings(ComboBox2.Items);
     end;
@@ -189,8 +194,59 @@ begin
     else resultado := valor;
   end;
 
-  // Temperatura
+  // Tamaño de datos
   4: begin
+    if unidadDe = 'Bit' then valor := valor * 8
+    else if unidadDe = 'Kilobit' then valor := valor * 125
+    else if unidadDe = 'Kibibit' then valor := valor * 128
+    else if unidadDe = 'Megabit' then valor := valor * 125000
+    else if unidadDe = 'Mebibit' then valor := valor * 131100
+    else if unidadDe = 'Gigabit' then valor := valor * 1.25E+8
+    else if unidadDe = 'Gibibit' then valor := valor * 1.342E+8
+    else if unidadDe = 'Terabit' then valor := valor * 1.25E+11
+    else if unidadDe = 'Tebibit' then valor := valor * 1.374E+11
+    else if unidadDe = 'Petabit' then valor := valor * 1.25E+14
+    else if unidadDe = 'Pebibit' then valor := valor * 1.407E+14
+    else if unidadDe = 'Byte' then valor := valor
+    else if unidadDe = 'Kilobyte' then valor := valor * 1000
+    else if unidadDe = 'Kibibyte' then valor := valor * 1024
+    else if unidadDe = 'Megabyte' then valor := valor * 1000000
+    else if unidadDe = 'Mebibyte' then valor := valor * 1.049E+6
+    else if unidadDe = 'Gigabyte' then valor := valor * 1000000000
+    else if unidadDe = 'Gibibyte' then valor := valor * 1.074E+9
+    else if unidadDe = 'Tirabyte' then valor := valor * 1000000000000
+    else if unidadDe = 'Tibibyte' then valor := valor * 1.1E+12
+    else if unidadDe = 'Petabyte' then valor := valor * 1000000000000000
+    else if unidadDe = 'Pebibyte' then valor := valor * 1.126E+15;
+
+    if unidadA = 'Bit' then resultado := valor / 8
+    else if unidadA = 'Kilobit' then resultado := valor / 125
+    else if unidadA = 'Kibibit' then resultado := valor / 128
+    else if unidadA = 'Megabit' then resultado := valor / 125000
+    else if unidadA = 'Mebibit' then resultado := valor / 131100
+    else if unidadA = 'Gigabit' then resultado := valor / 1.25E+8
+    else if unidadA = 'Gibibit' then resultado := valor / 1.342E+8
+    else if unidadA = 'Terabit' then resultado := valor / 1.25E+11
+    else if unidadA = 'Tebibit' then resultado := valor / 1.374E+11
+    else if unidadA = 'Petabit' then resultado := valor / 1.25E+14
+    else if unidadA = 'Pebibit' then resultado := valor / 1.407E+14
+    else if unidadA = 'Byte' then resultado := valor
+    else if unidadA = 'Kilobyte' then resultado := valor / 1000
+    else if unidadA = 'Kibibyte' then resultado := valor / 1024
+    else if unidadA = 'Megabyte' then resultado := valor / 1000000
+    else if unidadA = 'Mebibyte' then resultado := valor / 1.049E+6
+    else if unidadA = 'Gigabyte' then resultado := valor / 1000000000
+    else if unidadA = 'Gibibyte' then resultado := valor / 1.074E+9
+    else if unidadA = 'Tirabyte' then resultado := valor / 1000000000000
+    else if unidadA = 'Tibibyte' then resultado := valor / 1.1E+12
+    else if unidadA = 'Petabyte' then resultado := valor / 1000000000000000
+    else if unidadA = 'Pebibyte' then resultado := valor / 1.126E+15
+    else resultado := valor;
+
+    end;
+
+  // Temperatura
+  5: begin
     if unidadDe = 'Fahrenheit' then valor := (valor - 32) * 5/9
     else if unidadDe = 'Kelvin' then valor := valor - 273.15;
 
@@ -200,7 +256,7 @@ begin
   end;
 
   // Tiempo
-  5: begin
+  6: begin
     if unidadDe = 'Segundos' then valor := valor
     else if unidadDe = 'Horas' then valor := valor * 3600
     else if unidadDe = 'Minutos' then valor := valor * 60;
@@ -212,7 +268,7 @@ begin
   end;
 
   // Velocidad
-  6: begin
+  7: begin
     if unidadDe = 'Kilómetros por hora' then valor := valor * 0.277778
     else if unidadDe = 'Millas por hora' then valor := valor * 0.44704
     else if unidadDe = 'Pies por segundo' then valor := valor * 0.3048
@@ -226,7 +282,7 @@ begin
   end;
 
   // Capacitancia
-  7: begin
+  8: begin
     if unidadDe = 'Faradio' then valor := valor
     else if unidadDe = 'Milifaradio' then valor := valor * 1E-3
     else if unidadDe = 'Microfaradio' then valor := valor * 1E-6
